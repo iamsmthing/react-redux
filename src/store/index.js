@@ -14,6 +14,11 @@ const songsSlice = createSlice({
       state.splice(index, 1);
     },
   },
+  extraReducers(builder){
+    builder.addCase(movieSlice.actions.reset,(action,state)=>{
+      return [];
+    })
+ }
 });
 
 const movieSlice=createSlice({
@@ -32,7 +37,8 @@ const movieSlice=createSlice({
        console.log(state);
        return [];
     }
-  }
+  },
+ 
 })
 
 // console.log(songsSlice.actions.addSong("data"));
